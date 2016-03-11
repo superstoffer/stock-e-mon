@@ -53,4 +53,15 @@ angular.module('starter.controllers', [])
 })
 
 .controller('PlaylistCtrl', function($scope, $stateParams) {
+})
+
+.controller('TradesCtrl', function($scope) {
+  $scope.trades = [
+    { name: 'Trade 1', id: 1 },
+    { name: 'Trade 2', id: 2 },
+    { name: 'Trade 3', id: 3 }
+  ];
+})
+
+.controller('TradeCtrl', function($scope, $stateParams) {
 });

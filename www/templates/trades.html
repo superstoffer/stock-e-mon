@@ -1,0 +1,9 @@
+<ion-view view-title="Trades">
+  <ion-content>
+    <ion-list>
+      <ion-item ng-repeat="trade in trades" href="#/app/trades/{{trade.id}}">
+        {{trade.name}}
+      </ion-item>
+    </ion-list>
+  </ion-content>
+</ion-view>

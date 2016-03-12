@@ -45,7 +45,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'services'])
       views: {
         'menuContent': {
           templateUrl: 'templates/trades.html',
-          controller: 'TradesCtrl'
+          controller: 'AppCtrl'
         }
       }
     })
@@ -54,7 +54,12 @@ angular.module('starter', ['ionic', 'starter.controllers', 'services'])
     views: {
       'menuContent': {
         templateUrl: 'templates/trade.html',
-        controller: 'TradeCtrl'
+        controller: 'AppCtrl'
+        // resolve: {
+        //   trade: function(){
+        //     return _.filter( trades, "id" )
+        //   }
+        // }
       }
     }
   })

@@ -2,6 +2,11 @@ angular.module('starter.controllers', [])
 
 .controller('AppCtrl', function($scope, $ionicModal, $timeout, Data, Trade, Trades) {
 
+  $scope.trades = [
+    { id: 1, name: 'Trade 1', category: 'health' },
+    { id: 2, name: 'Trade 2', category: 'goods' },
+    { id: 3, name: 'Trade 3', category: 'property' }
+  ];
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
@@ -46,17 +51,7 @@ angular.module('starter.controllers', [])
       $scope.closeLogin();
     }, 1000);
   };
-})
-
-.controller('TradesCtrl', function($scope) {
-  $scope.trades = [
-    { id: 1, name: 'Trade 1', category: 'health' },
-    { id: 2, name: 'Trade 2', category: 'goods' },
-    { id: 3, name: 'Trade 3', category: 'property' }
-  ];
-})
-
-.controller('TradeCtrl', function($scope, $stateParams) {
-  
 });
 
+// .controller('TradesCtrl', function($scope) {
+// });

@@ -19,7 +19,9 @@ angular.module('services', [])
 		    performance: performance
 	};
 
-	var settings = {}
+	var settings = {};
+
+	var trades = [];
 
 	return {
 		user: user,
@@ -33,6 +35,8 @@ angular.module('services', [])
 	// ...
 
 	return {
+		id: 1,
+		category: "health service",
 		open: 'instrument',
 		close: ['price', 'time'],
 		prospect: ['median of performance', 'performance of owner'],

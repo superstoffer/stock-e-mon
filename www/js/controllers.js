@@ -50,9 +50,9 @@ angular.module('starter.controllers', [])
 
 .controller('TradesCtrl', function($scope) {
   $scope.trades = [
-    { name: 'Trade 1', id: 1 },
-    { name: 'Trade 2', id: 2 },
-    { name: 'Trade 3', id: 3 }
+    { id: 1, name: 'Trade 1', category: 'health' },
+    { id: 2, name: 'Trade 2', category: 'goods' },
+    { id: 3, name: 'Trade 3', category: 'property' }
   ];
 })
 

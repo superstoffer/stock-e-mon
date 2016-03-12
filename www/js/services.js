@@ -43,4 +43,42 @@ angular.module('services', [])
 		}
 	}
 	
+})
+
+.factory('Trades', function Trades( $http ){
+
+	var requestBackend = function( query ){
+		console.log("query from requestBackend ", query )
+		var http_query = 'https://api.duckduckgo.com/?q=' + query + '&format=json&pretty=0&callback=JSON_CALLBACK';
+	    $http.jsonp( http_query ).
+          success( function( data, status, headers, config ){
+			console.log("successs request ", data );            
+        }).
+          error( function( data, status, headers, config ){
+            console.log( "http query failed", status, headers )
+        })
+	}
+
+	var createTrade = function(){
+		console.log("trade created")
+	};
+	var deleteTrade = function(){
+		console.log("trade deleted")
+	};
+
+	return {
+		request: function request( q ){
+			console.log("trades.request ", q );
+			var req = q || "default";
+			return requestBackend( req );
+		},
+		create: function createTrade(){
+			return createTrade();
+		},
+		delete: function deleteTrade(){
+			return deleteTrade();
+		}
+
+
+	}
 });

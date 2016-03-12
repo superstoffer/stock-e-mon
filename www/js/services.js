@@ -26,4 +26,21 @@ angular.module('services', [])
 		settings: settings
 
 	}
+})
+
+.factory('Trade', function Trade() {
+	// Service logic
+	// ...
+
+	return {
+		open: 'instrument',
+		close: ['price', 'time'],
+		prospect: ['median of performance', 'performance of owner'],
+		pool: {
+			total: 100,
+			user_position: 10,
+			risk: 0.2
+		}
+	}
+	
 });

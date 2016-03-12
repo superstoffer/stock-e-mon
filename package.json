@@ -19,5 +19,7 @@
     "cordova-plugin-console",
     "cordova-plugin-device"
   ],
-  "cordovaPlatforms": []
+  "cordovaPlatforms": [
+    "ios"
+  ]
 }

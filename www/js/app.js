@@ -57,9 +57,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'services'])
         controller: 'AppCtrl',
         resolve: {
           trade: function($stateParams, Trades) {
-            console.log("resolve working ", $stateParams )
             Trades.latest = $stateParams.tradeId
-            console.log("resolve latest id ", Trades.latest )
           }        
         }
         // resolve: {

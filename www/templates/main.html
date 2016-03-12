@@ -3,5 +3,17 @@
     <h1>Heat Map - trade ideas </h1>
     <h1>Portfolio</h1>
     <h1>My Balance</h1>
+
+    <form ng-submit="trades.request( tradeData.type )">
+      <div class="list">
+        <label class="item item-input">
+          <span class="input-label">Trade</span>
+          <input type="text" ng-model="tradeData.type" placeholder="type of trade you like">
+        </label>
+        <label class="item">
+          <button class="button button-block button-positive" type="submit">Get trade</button>
+        </label>
+      </div>
+    </form>
   </ion-content>
 </ion-view>

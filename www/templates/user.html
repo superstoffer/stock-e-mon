@@ -1,10 +1,23 @@
 <ion-view view-title="User" ng-model="data">
   <ion-content>
-    <h1>{{ user.name }}</h1>
-    <h1>{{ user.email }}</h1>
+    <h1>{{ data.user.name }}</h1>
+    <h1>{{ data.user.email }}</h1>
     <h1> you cant know this psw</h1>
-    <h1>{{ user.balance}}</h1>
-    <h1>{{ user.open_trades }}</h1>
-    <h1>{{ user.closed_trades }}</h1>
+    <h1>{{ data.user.balance}} DKK</h1>
+
+    <h1>Open trades</h1>
+    <ion-list>
+    	<ion-item ng-repeat="open_trade in data.user.open_trades">
+        <h3>{{open_trade}}</h3>
+      </ion-item>
+    </ion-list>
+
+    <h1>Closed trades</h1>
+    <ion-list>
+    	<ion-item ng-repeat="closed_trade in data.user.closed_trades">
+        <h3>{{closed_trade}}</h3>
+    	</ion-item> 
+    </ion-list> 
+
   </ion-content>
 </ion-view>

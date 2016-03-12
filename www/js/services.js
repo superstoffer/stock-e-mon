@@ -8,7 +8,7 @@ angular.module('services', [])
 			email: "u@u.dkdkdkd",
 			balance: 100.1,
 		    open_trades: [ 'la', 'lal', 'ala' ],
-		    closed_trades: [ 'udd', 'ud' , 'udd']
+		    closed_trades: [ 'udd', 'ud' , 'uddd']
 	};
 
 	var settings = {}

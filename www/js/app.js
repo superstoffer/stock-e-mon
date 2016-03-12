@@ -94,6 +94,15 @@ angular.module('starter', ['ionic', 'starter.controllers', 'services'])
         controller: 'TradeCtrl'
       }
     }
+  })
+  .state('app.user', {
+    url: '/user',
+    views: {
+      'menuContent': {
+        templateUrl: 'templates/user.html',
+        controller: 'AppCtrl'
+      }
+    }
   });
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/app/main');

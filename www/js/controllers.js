@@ -64,4 +64,5 @@ angular.module('starter.controllers', [])
 })
 
 .controller('TradeCtrl', function($scope, $stateParams) {
+  
 });

@@ -1,10 +1,10 @@
-<ion-view view-title="User">
+<ion-view view-title="User" ng-model="data">
   <ion-content>
-    <h1>Name</h1>
-    <h1>email</h1>
-    <h1>psw</h1>
-    <h1>balance</h1>
-    <h1>open trades</h1>
-    <h1>closed trades</h1>
+    <h1>{{ user.name }}</h1>
+    <h1>{{ user.email }}</h1>
+    <h1> you cant know this psw</h1>
+    <h1>{{ user.balance}}</h1>
+    <h1>{{ user.open_trades }}</h1>
+    <h1>{{ user.closed_trades }}</h1>
   </ion-content>
 </ion-view>

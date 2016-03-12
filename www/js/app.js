@@ -54,7 +54,14 @@ angular.module('starter', ['ionic', 'starter.controllers', 'services'])
     views: {
       'menuContent': {
         templateUrl: 'templates/trade.html',
-        controller: 'AppCtrl'
+        controller: 'AppCtrl',
+        resolve: {
+          trade: function($stateParams, Trades) {
+            console.log("resolve working ", $stateParams )
+            Trades.latest = $stateParams.tradeId
+            console.log("resolve latest id ", Trades.latest )
+          }        
+        }
         // resolve: {
         //   trade: function(){
         //     return _.filter( trades, "id" )

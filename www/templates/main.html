@@ -1,11 +1,48 @@
 <ion-view view-title="HiveTrain">
   <ion-content>
-  	<img src="#/img.hivetrain" width="225" height="151" />
 
-    <h1>Heat Map - trade ideas </h1>
-    <h1>Portfolio</h1>
-    <h1>My Balance</h1>
+<!--         <div class="lab_item">		
+        <div class="hexagon hexagon2">
+            <div class="hexagon-in1">
+                <div class="hexagon-in2" style="background-image: url('http://placekitten.com/200/305');">                
+                </div>
+             </div>
+         </div> -->
 
+	<div class="list card">
+			
+	  <div class="item">
+	
+
+		<div class="row">
+		  <div class="col">
+		    <h2>Hello</h2>
+		    <p> {{ data.user.name }}</p>
+		  </div>
+		  <div class="col">
+			<img src="img/icon.png">
+		  </div>
+		</div>
+
+
+	  </div>
+	  <div class="item">
+	    <canvas id="HexCanvas" width="600" height="600"></canvas>
+		<hive val="data.hive" update="data.update"></hive>
+	  </div>
+	  <div class="item">
+	    <h2>Balance</h2>
+	    <p> {{ data.user.balance }}</p>
+	  </div>
+	  <div class="item" href="templates/user">
+	  	<h2> portfolio </h2>
+	  </div>
+	</div>
+
+    <button class="button button-full button-positive">
+  		Portfolio
+		<img src="img/icon.png"/>
+	</button>
     <form ng-submit="trades.request( tradeData.type )">
       <div class="list">
         <label class="item item-input">

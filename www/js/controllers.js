@@ -1,23 +1,25 @@
 angular.module('starter.controllers', [])
 
-.controller('AppCtrl', function($scope, $ionicModal, $timeout, Data, Trade, Trades) {
-
+.controller('AppCtrl', function($scope, $ionicModal, $timeout, $window, Data, Trade, Trades) {
   // With the new view caching in Ionic, Controllers are only called
   // when they are recreated or on app start, instead of every page change.
   // To listen for when this page is active (for example, to refresh data),
   // listen for the $ionicView.enter event
   //$scope.$on('$ionicView.enter', function(e) {
   //});
+
+
   $scope.data = Data; 
   
   $scope.trade = Trade;
   $scope.trades = Trades;
 
-  $scope.tradeData = {
-    
-  };
+  $scope.tradeData = {};
   // Form data for the login modal
   $scope.loginData = {};
+
+  $scope.width = $window.innerWidth 
+  $scope.height = $window.innerHeight 
 
   // Create the login modal that we will use later
   $ionicModal.fromTemplateUrl('templates/login.html', {

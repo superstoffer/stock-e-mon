@@ -52,9 +52,9 @@ angular.module('services', [])
 .factory('Trades', function Trades( $http ){
 	var latest = null;
 	var requested = [
-    { id: 1, name: 'Trade 1', category: 'health' },
-    { id: 2, name: 'Trade 2', category: 'goods' },
-    { id: 3, name: 'Trade 3', category: 'property' }
+	    { id: 1, name: 'Trade 1', category: 'health' },
+	    { id: 2, name: 'Trade 2', category: 'goods' },
+	    { id: 3, name: 'Trade 3', category: 'property' }
   	];
 
 	var requestBackend = function( query ){
@@ -88,6 +88,7 @@ angular.module('services', [])
 		delete: function deleteTrade(){
 			return deleteTrade();
 		},
-		requested: requested
+		requested: requested,
+		latest: latest
 	}
 });

@@ -30,9 +30,15 @@ angular.module('services', [])
 		byCategory: []
 	};
 
+	var ticker =  {
+		latest: null,
+		tickers: {}
+	}
+
 	return {
 		user: user,
-		settings: settings
+		settings: settings,
+		ticker: ticker
 
 	}
 })
@@ -56,7 +62,9 @@ angular.module('services', [])
 	
 })
 
-.factory('Trades', function Trades( $http ){
+.factory('Trades', function Trades( $http, Data ){
+	var d = Data
+
 	var latest = null;
 	var categories = []
 	var requested = [
@@ -101,9 +109,9 @@ angular.module('services', [])
 			// });
 
 			$http.get('http://api.hivetrain.com/stocks/'+ q ).success(function(data, status, headers, config){
-			        console.debug("Data : "+data);
-			        var response = data 
-			        console.log("FUNGER ", data )
+			        console.debug("Data : ", data, d );
+			        d.ticker.latest = q
+			        d.ticker.tickers[ q ] = data.query.results.quote 
 			    }).error(function(){
 			        console.debug("error");
 			    });

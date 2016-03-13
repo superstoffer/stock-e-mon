@@ -1,1 +1,14 @@
-ticker.html
+<ion-view view-title="Ticker">
+  <ion-content ng-model="ticker">
+	<h2>{{ ticker.latest }}</h2>
+    <p>{{ ticker.latest }}</p>
+	<div class="list">
+
+		<a class="item item-avatar" href="#" ng-repeat="(t,key) in ticker.tickers">
+			<img src="img/icon.png">
+			<h2>{{ key }}</h2>
+			<p>Latest price: {{ t.LastTradePriceOnly }} || Volume: {{ t.Volume }} </p>
+		</a>
+	</div>
+	</ion-content>
+</ion-view>

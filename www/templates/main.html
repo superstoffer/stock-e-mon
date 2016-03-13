@@ -46,6 +46,34 @@
 			</div>
 		</div>
 		
+<!-- 		<h2>{{ ticker.latest }}</h2>
+	    <p>{{ ticker.latest }}</p>
+ -->
+
+		<div class="list">
+			<a class="item item-avatar" href="#" ng-repeat="(key,t) in data.ticker.tickers">
+				<div class="item">
+					<div class="row">
+						<div class="col">
+							<img src="img/icon.png">
+						</div>
+						<div class="col">
+							<h2>{{ key }}</h2>
+							<p>Latest price: {{ t.LastTradePriceOnly }} || Volume: {{ t.Volume }} || Change: {{ t.Change }} || DaysLow: {{ t.DaysLow }} || DaysHigh: {{ t.DaysHigh }} 
+						</div>
+						<div class="col">
+							<button class="button button-clear button-royal">>
+								suggest trade
+								<i class="icon ion-chevron-right"></i>
+							</button>
+						</div>
+					</div>
+				</div>
+			</a>
+		</div>
+
+
+
 	    <form ng-submit="trades.request( tradeData.type )">
 	      <div class="list">
 	        <label class="item item-input">

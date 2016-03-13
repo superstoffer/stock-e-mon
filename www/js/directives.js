@@ -53,12 +53,13 @@ angular.module('directives', [])
       val: "=",
       update: "="    
     },
+    template : '<canvas id="HexCanvas" width="460" height="320"></canvas>',
     controller: function( $scope, $element ){
       //console.log("engine started bitch " )
     },
     link: function( scope, element, attrs ){
       var hexagonGrid = new HexagonGrid("HexCanvas", 60);
-      hexagonGrid.drawHexGrid( 3, data.settings.categories.length, 6, 6, true);
+      hexagonGrid.drawHexGrid( 3, 4, 3, 3, true);
       
     }
   }

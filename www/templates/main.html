@@ -12,34 +12,62 @@
 	<div class="list card">
 			
 		<div class="item">
-
 			<div class="row">
 				<div class="col">
 					<h2>Hello</h2>
 					<p> {{ data.user.name }}</p>
 				</div>
 				<div class="col">
-					<img src="img/icon.png">
 				</div>
 			</div>
 		</div>
 
-		<div>
+		<div class="item">
+			<div class="row">
+				<div class="col">
+					<h2>Balance</h2>
+					<p> {{ data.user.balance }}</p>
+				</div>
+				<div class="col" href="templates/user">
+					<h2> portfolio </h2>
+				</div>
+			</div>
+		</div>
+
+<!-- 		<div>
 			<div class="row" >
 				<div class="col" ng-repeat="category in data.settings.categories">{{ category }}</div>
 			</div>
-		</div>  
+		</div>   -->
+
+		<div class="center">
+			<div class="col col-33 col-offset-33">
+				<hive val="data.hive" update="data.update"></hive>
+			</div>
+		</div>
+		
+	    <form ng-submit="trades.request( tradeData.type )">
+	      <div class="list">
+	        <label class="item item-input">
+	          <span class="input-label">Ticker</span>
+	          <input type="text" ng-model="tradeData.type" placeholder="type of trade you like">
+	        </label>
+	        <label class="item">
+	          <button class="button button-block button-light" type="submit">Get trade</button>
+	        </label>
+	      </div>
+	    </form>
+
 
 		<div class="item">
-			<canvas id="HexCanvas" width="600" height="600"></canvas>
-			<hive val="data.hive" update="data.update"></hive>
-		</div>
-		<div class="item">
-			<h2>Balance</h2>
-			<p> {{ data.user.balance }}</p>
-		</div>
-		<div class="item" href="templates/user">
-			<h2> portfolio </h2>
+			<div class="row">
+				<div class="col">
+					Distributed <br> Portfolio <br>Management
+				</div>
+				<div class="col">
+					<img src="img/icon.png">
+				</div>
+			</div>
 		</div>
 	</div>
 
@@ -47,16 +75,5 @@
   		Portfolio
 		<img src="img/icon.png"/>
 	</button> -->
-    <form ng-submit="trades.request( tradeData.type )">
-      <div class="list">
-        <label class="item item-input">
-          <span class="input-label">Trade</span>
-          <input type="text" ng-model="tradeData.type" placeholder="type of trade you like">
-        </label>
-        <label class="item">
-          <button class="button button-block button-positive" type="submit">Get trade</button>
-        </label>
-      </div>
-    </form>
   </ion-content>
 </ion-view>

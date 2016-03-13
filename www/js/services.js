@@ -20,7 +20,8 @@ angular.module('services', [])
 	};
 
 	var settings = {
-		categories: ['technology', 'services', 'basic materials', 'financial', 'consumer', 'goods', 'healthcare', 'utilities' ]
+		categories: ['technology', 'services', 'basic materials', 'financial', 'consumer', 'goods', 'healthcare', 'utilities' ],
+		ticker: ['SGY','YHOO', 'AAPL', 'FB' ]
 	};
 
 	var trades = {
@@ -79,15 +80,37 @@ angular.module('services', [])
 	var createTrade = function(){
 		console.log("trade created")
 	};
+
 	var deleteTrade = function(){
 		console.log("trade deleted")
 	};
 
 	return {
 		request: function request( q ){
-			console.log("trades.request ", q );
-			var req = q || "default";
-			return requestBackend( req );
+			// $http({
+			// 	method: 'GET',
+			// 	url: 'api.hivetrain.com/stocks/GOOG'
+			// 	}).then(function successCallback(response) {
+			// 	// this callback will be called asynchronously
+			// 	// when the response is available
+			// 		console.log("successs request ", response );            
+			// 	}, function errorCallback(response) {
+			// 	// called asynchronously if an error occurs
+			// 	// or server returns response with an error status.
+		 //            console.log( "http query failed", response )
+			// });
+
+			$http.get('http://api.hivetrain.com/stocks/'+ q ).success(function(data, status, headers, config){
+			        console.debug("Data : "+data);
+			        var response = data 
+			        console.log("FUNGER ", data )
+			    }).error(function(){
+			        console.debug("error");
+			    });
+
+			// console.log("trades.request ", q );
+			// var req = q || "default";
+			// return requestBackend( req );
 		},
 		create: function createTrade(){
 			return createTrade();

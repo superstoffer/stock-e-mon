@@ -11,38 +11,42 @@
 
 	<div class="list card">
 			
-	  <div class="item">
-	
+		<div class="item">
 
-		<div class="row">
-		  <div class="col">
-		    <h2>Hello</h2>
-		    <p> {{ data.user.name }}</p>
-		  </div>
-		  <div class="col">
-			<img src="img/icon.png">
-		  </div>
+			<div class="row">
+				<div class="col">
+					<h2>Hello</h2>
+					<p> {{ data.user.name }}</p>
+				</div>
+				<div class="col">
+					<img src="img/icon.png">
+				</div>
+			</div>
 		</div>
 
+		<div>
+			<div class="row" >
+				<div class="col" ng-repeat="category in data.settings.categories">{{ category }}</div>
+			</div>
+		</div>  
 
-	  </div>
-	  <div class="item">
-	    <canvas id="HexCanvas" width="600" height="600"></canvas>
-		<hive val="data.hive" update="data.update"></hive>
-	  </div>
-	  <div class="item">
-	    <h2>Balance</h2>
-	    <p> {{ data.user.balance }}</p>
-	  </div>
-	  <div class="item" href="templates/user">
-	  	<h2> portfolio </h2>
-	  </div>
+		<div class="item">
+			<canvas id="HexCanvas" width="600" height="600"></canvas>
+			<hive val="data.hive" update="data.update"></hive>
+		</div>
+		<div class="item">
+			<h2>Balance</h2>
+			<p> {{ data.user.balance }}</p>
+		</div>
+		<div class="item" href="templates/user">
+			<h2> portfolio </h2>
+		</div>
 	</div>
 
-    <button class="button button-full button-positive">
+<!--     <button class="button button-full button-positive">
   		Portfolio
 		<img src="img/icon.png"/>
-	</button>
+	</button> -->
     <form ng-submit="trades.request( tradeData.type )">
       <div class="list">
         <label class="item item-input">

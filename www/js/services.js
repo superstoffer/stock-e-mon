@@ -19,9 +19,15 @@ angular.module('services', [])
 		    performance: performance
 	};
 
-	var settings = {};
+	var settings = {
+		categories: ['technology', 'services', 'basic materials', 'financial', 'consumer', 'goods', 'healthcare', 'utilities' ]
+	};
 
-	var trades = [];
+	var trades = {
+		popular: [],
+		latest: [],
+		byCategory: []
+	};
 
 	return {
 		user: user,
@@ -51,8 +57,9 @@ angular.module('services', [])
 
 .factory('Trades', function Trades( $http ){
 	var latest = null;
+	var categories = []
 	var requested = [
-	    { id: 1, name: 'Trade 1', category: 'health' },
+	    { id: 1, name: 'Trade 1', category: 'health', type:'call' },
 	    { id: 2, name: 'Trade 2', category: 'goods' },
 	    { id: 3, name: 'Trade 3', category: 'property' }
   	];

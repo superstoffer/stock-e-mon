@@ -3,7 +3,7 @@ angular.module('directives', [])
 .directive('hive', function( $document, $window, $rootScope, Data){
   var width = $window.innerWidth 
   var height = $window.innerHeight 
-
+  var data = Data
 // var margin = {
 //     top: 80,
 //     right: 20,
@@ -58,7 +58,7 @@ angular.module('directives', [])
     },
     link: function( scope, element, attrs ){
       var hexagonGrid = new HexagonGrid("HexCanvas", 60);
-      hexagonGrid.drawHexGrid(4, 3, 50, 50, true);
+      hexagonGrid.drawHexGrid( 3, data.settings.categories.length, 6, 6, true);
       
     }
   }
